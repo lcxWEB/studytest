@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+        <property name="scopes">
+            <map>
+                <entry key="thread" value="com.star.spring.ioc.scope.ThreadScope"/>
+            </map>
+        </property>
+    </bean>
+
+
+    <bean id="djNewsProvider" class="com.star.spring.ioc.FXNewsProvider" scope="singleton" lazy-init="true">
+        <!--<aop:scoped-proxy/>-->
+
+        <!--<constructor-arg index="0">-->
+        <!--<ref bean="djNewsListener"/>-->
+        <!--</constructor-arg>-->
+        <!--<constructor-arg index="1">-->
+        <!--<ref bean="djNewsPersister"/>-->
+        <!--</constructor-arg>-->
+        <property name="newsListener" ref="djNewsListener"/>
+        <!--<property name="newsPersister" ref="djNewsPersister"/>-->
+        <!--<property name="newsPersister">-->
+        <!--&lt;!&ndash;内部bean&ndash;&gt;-->
+        <!--<bean class="com.star.spring.ioc.DowJonesNewsPersister">-->
+        <!--</bean>-->
+        <!--</property>-->
+        <property name="newsPersister">
+            <!--内部bean-->
+            <bean class="com.star.spring.ioc.DowJonesNewsPersister">
+            </bean>
+        </property>
+
+        <property name="valueSet">
+            <set>
+                <value>sdsds</value>
+                <ref bean="djNewsListener"></ref>
+                <bean class="com.star.spring.ioc.DowJonesNewsListener"></bean>
+                <list>
+                    <value>dsds</value>
+                    <value>dsds</value>
+                    <value>dsds</value>
+                </list>
+            </set>
+        </property>
+
+        <property name="valueMap">
+            <map>
+                <entry key="ddd">
+                    <value>sdsds</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>dsdsd</value>
+                    </key>
+                    <ref bean="djNewsListener"/>
+                </entry>
+                <entry key-ref="djNewsListener">
+                    <list>
+                        <value>sdsdsds</value>
+                    </list>
+                </entry>
+                <entry key="dfdd" value-ref="djNewsListener">
+                </entry>
+                <entry key="dfdd">
+                    <props>
+                        <prop key="sdsds">dsdsds</prop>
+                    </props>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="ssss">sdsds</prop>
+                <prop key="sdsds">fdfd</prop>
+            </props>
+        </property>
+        <property name="str">
+            <null></null>
+        </property>
+        <replaced-method name="getAndPersistNews" replacer="providerReplacer"></replaced-method>
+
+    </bean>
+
+    <bean id="providerReplacer" class="com.star.spring.ioc.scope.FXNewsProviderMethodReplacer">
+    </bean>
+
+    <bean id="djNewsListener" class="com.star.spring.ioc.DowJonesNewsListener">
+    </bean>
+    <!--<bean id="djNewsPersister" class="com.star.spring.ioc.DowJonesNewsPersister">-->
+    <!--</bean>-->
+
+    <bean id="beanFactory" class="com.star.spring.ioc.NonStaticBarInterfaceFactory"></bean>
+
+    <bean id="djNewsPersister1" factory-bean="beanFactory" factory-method="getInstance">
+        <constructor-arg>
+            <ref bean="fxNewsBean"></ref>
+        </constructor-arg>
+    </bean>
+
+    <bean id="fxNewsBean" class="com.star.spring.ioc.FXNewsBean"></bean>
+
+    <bean id="nextDayDateDisplayer" class="com.star.spring.ioc.NextDayDateDisplayer">
+        <property name="dateOfNextDay">
+            <ref bean="nextDayDate"/>
+        </property>
+    </bean>
+    <bean id="nextDayDate" class="com.star.spring.ioc.NextDayDateFactoryBean">
+    </bean>
+
+    <bean id="newsBean" class="com.star.spring.ioc.FXNewsBean" scope="prototype">
+    </bean>
+    <bean id="mockPersister" class="com.star.spring.ioc.scope.MockNewsPersister">
+        <!--<property name="newsBean">-->
+        <!--<ref bean="newsBean"/>-->
+        <!--</property>-->
+
+        <!--方法注入-->
+        <!--<lookup-method name="getNewsBean" bean="newsBean"></lookup-method>-->
+    </bean>
+
+    <bean id="dateFoo" class="com.star.spring.ioc.scope.DateFoo" destroy-method="close">
+        <property name="date">
+            <value>2007/10/16</value>
+        </property>
+    </bean>
+
+    <!--<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">-->
+        <!--<property name="customEditors">-->
+            <!--<map>-->
+                <!--<entry key="java.util.Date">-->
+                    <!--<ref bean="datePropertyEditor"/>-->
+                <!--</entry>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <bean id="datePropertyEditor" class="com.star.spring.ioc.scope.DatePropertyEditor">
+        <property name="datePattern">
+            <value>yyyy/MM/dd</value>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars">
+            <list>
+                <ref bean="datePropertyEditorRegistrar"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="datePropertyEditorRegistrar" class="com.star.spring.ioc.scope.DatePropertyEditorRegistrar">
+        <property name="propertyEditor">
+            <ref bean="datePropertyEditor"/>
+        </property>
+    </bean>
+
+
+</beans>

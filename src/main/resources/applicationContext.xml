@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <!--开启注解扫描，包含了属性注入注解-->
+    <context:component-scan base-package="com.star.spring"/>
+
+    <!--开启属性注入注解-->
+    <context:annotation-config></context:annotation-config>
+
+    <!--无参数的构造器方式-->
+    <!--<bean id="person" class="com.star.spring.bean.Person" scope="singleton" init-method="setUp" destroy-method="tearDown">-->
+        <!--<property name="age" value="99"></property>-->
+        <!--<property name="name" value="花花"></property>-->
+        <!--<property name="helloService" ref="helloService"></property>-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;<bean class="com.star.spring.bean.MyBeanPostProcessor" />&ndash;&gt;-->
+
+    <!--<bean id="helloService" class="com.star.spring.bean.HelloService" >-->
+        <!--<property name="age" value="20"></property>-->
+        <!--<property name="name" value="WWW"></property>-->
+    <!--</bean>-->
+
+<!--&lt;!&ndash;静态工厂的方式实例化bean&ndash;&gt;-->
+    <!--<bean id="personfactory" class="com.star.spring.bean.PersonFactory" factory-method="getPerson" />-->
+
+    <!--&lt;!&ndash;实例工厂的方式&ndash;&gt;-->
+    <!--<bean id="personfactoryin" class="com.star.spring.bean.PersonFactoryIn" />-->
+    <!--<bean id="person3" factory-bean="personfactoryin" factory-method="createPerson" />-->
+
+    <!--bean的作用范围-->
+    <!--<bean id="person" class="com.star.spring.bean.Person" scope="prototype" >-->
+    <!--<property name="age" value="99"></property>-->
+    <!--<property name="name" value="花花"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="userDao" class="com.star.spring.bean.UserDaoImp"/>-->
+
+    <!--bean的构造方法的属性注入-->
+    <!--<bean id="person2" class="com.star.spring.bean.Person" >-->
+        <!--<constructor-arg name="name" value="兰陵笑笑生" />-->
+        <!--<constructor-arg name="age" value="18"/>-->
+    <!--</bean>-->
+
+    <!--复杂类型的属性注入-->
+    <bean id="collectionBean" class="com.star.spring.bean.CollectionBean">
+        <!--数组类型-->
+        <property name="arr">
+            <list>
+                <value>aaaa</value>
+                <value>bbbb</value>
+                <value>cccc</value>
+                <value>dddd</value>
+                <value>eeee</value>
+                <value>ffff</value>
+                <value>ggggg</value>
+            </list>
+        </property>
+
+        <!--List类型-->
+        <property name="list">
+            <list>
+                <value>555</value>
+                <value>55577</value>
+                <value>55599</value>
+            </list>
+        </property>
+
+        <!--Set类型-->
+        <property name="set">
+            <set>
+                <value>dddd</value>
+                <value>dddd</value>
+                <value>dddd</value>
+                <value>dddd</value>
+                <value>ddrrrrrrdd</value>
+            </set>
+        </property>
+
+        <!--Map类型-->
+        <property name="map">
+            <map>
+                <entry key="ooo" value="1111"></entry>
+                <entry key="ooo" value="1111"></entry>
+                <entry key="ooo" value="1111"></entry>
+            </map>
+        </property>
+
+        <!--Properties类型-->
+        <property name="properties">
+            <props>
+                <prop key="username">admin</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>

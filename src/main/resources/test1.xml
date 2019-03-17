@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<hr xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test.xsd">
+    <employee no="1111">
+        <name>ddd</name>
+        <age>45</age>
+        <salary>999</salary>
+    </employee>
+</hr>
