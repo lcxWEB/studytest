@@ -1,5 +1,7 @@
 package com.star.thinkInJava.c2everythingIsObject;
 
+import com.star.thinkInJava.c3operators.Operators;
+
 public class EverythingIsAnObject {
 
     private String s;
@@ -53,5 +55,9 @@ public class EverythingIsAnObject {
         System.getProperties().list(System.out);
         System.out.println(System.getProperty("user.name"));
         System.out.println(System.getProperty("java.library.path"));
+        Operators operators = new Operators();
+
+
+
     }
 }

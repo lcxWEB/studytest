@@ -2,7 +2,21 @@ package com.star.thinkInJava.c3operators;
 
 import java.util.Random;
 
+class TestOP {
+
+    public TestOP() {}
+
+}
+
+
 public class Operators {
+
+    public static void print() {
+        System.out.println("print");
+    }
+
+//    i = 11;
+    private int i = 10;
 
     public static void main(String[] args) {
         System.out.println(11 / 3.0);
