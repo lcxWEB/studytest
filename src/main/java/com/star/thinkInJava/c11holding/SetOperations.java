@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 public class SetOperations {
 
-    public static void print(String str) {
+    public static void print(Object str) {
         System.out.println(str);
     }
 

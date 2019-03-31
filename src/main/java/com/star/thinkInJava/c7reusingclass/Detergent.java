@@ -5,6 +5,8 @@ import static com.star.thinkInJava.c11holding.SetOperations.print;
 class Cleanser {
     private String s = "Cleanser";
 
+    protected static String CS = "CS=====";
+
     Cleanser() {
         System.out.println("Cleanser()===");
     }
@@ -55,6 +57,7 @@ public class Detergent extends Cleanser {
     }
     // Test the new class:
     public static void main(String[] args) {
+        System.out.println(Detergent.CS);
 //        Detergent x = new Detergent();
         Detergent x = new Detergent(1);
         x.dilute();
