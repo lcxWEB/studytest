@@ -6,7 +6,7 @@ package com.star.java;
  * @Description:
  */
 
-public abstract class Person {
+public class Person {
 
     private String name;
 
@@ -21,7 +21,9 @@ public abstract class Person {
         return name;
     }
 
-    public abstract String getDesc();
+    public String getDesc() {
+        return "dd";
+    };
 
     @Override
     protected Person clone() throws CloneNotSupportedException {

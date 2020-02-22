@@ -6,4 +6,10 @@ public class SubTestClass extends TestClass2 {
         super(i);
     }
 
+//    SubTestClass(String i){
+//        System.out.println("xxx");
+//    }
+
+
+
 }

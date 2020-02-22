@@ -47,7 +47,7 @@ public class StringBuilderBenchmark {
     public static void main(String[] args) throws RunnerException {
         Options options = new OptionsBuilder()
                 .include(StringBuilderBenchmark.class.getSimpleName())
-                .output("D:/Benchmark.log")
+                .output("./Benchmark.log")
                 .build();
         new Runner(options).run();
     }

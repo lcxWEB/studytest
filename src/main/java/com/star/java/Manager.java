@@ -1,10 +1,8 @@
 package com.star.java;
 
-import com.star.datastructure.stackqueue.Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -21,25 +19,6 @@ public class Manager extends Employee {
         bonus = 0;
         // super(name);
         hireDays = 100;
-    }
-
-    public double getBonus() {
-        return bonus;
-    }
-
-    public void setBonus(double bonus) {
-        this.bonus = bonus;
-    }
-
-    @Override
-    public double getSalary() {
-        double salary = super.getSalary();
-        return salary + bonus;
-    }
-
-    @Override
-    public Manager getBuddy() {
-        return new Manager("sss");
     }
 
     public static void main(String[] args) {
@@ -85,6 +64,25 @@ public class Manager extends Employee {
         Employee[] employees1 = arrayList.toArray(new Employee[10]);
         System.out.println(Arrays.toString(employees1));
 
+    }
+
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
+
+    @Override
+    public double getSalary() {
+        double salary = super.getSalary();
+        return salary + bonus;
+    }
+
+    @Override
+    public Manager getBuddy() {
+        return new Manager("sss");
     }
 
 }

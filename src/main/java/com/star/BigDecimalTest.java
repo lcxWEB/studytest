@@ -1,7 +1,5 @@
 package com.star;
 
-import java.math.BigDecimal;
-
 /**
  * @Author: lcx
  * @Date: 2019/2/12 11:34
@@ -47,6 +45,12 @@ public class BigDecimalTest {
         int b = 1000;
 
         System.out.println(a == b);
+
+        Integer m = 1;
+        Integer n = 2;
+        Long k = 3L;
+        System.out.println(k == (m + n));
+        System.out.println(k.equals(m + n));
 
     }
 
