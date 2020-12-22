@@ -36,7 +36,7 @@ public class Test {
         // ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("singleton_file"));
         // oos.writeObject(instance);
         //
-        // File file = new File("singleton_file");
+        // Archives file = new Archives("singleton_file");
         // ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
         //
         // HungrySingleton newInstance = (HungrySingleton) ois.readObject();

@@ -2,7 +2,10 @@ package com.star.java;
 
 import java.text.DateFormatSymbols;
 import java.text.NumberFormat;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Locale;
 
 /**
  * @Author: lcx

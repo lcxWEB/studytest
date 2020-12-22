@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.7.RELEASE</version>
+		<version>2.2.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -226,7 +226,13 @@
 		<dependency>
 			<groupId>com.deepoove</groupId>
 			<artifactId>poi-tl</artifactId>
-			<version>1.4.2</version>
+			<version>1.7.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>4.1.2</version>
 		</dependency>
 
 		<dependency>
@@ -241,49 +247,56 @@
 			<version>2.2.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>e-iceblue</groupId>
-			<artifactId>spire.pdf.free</artifactId>
-			<version>2.2.2</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>e-iceblue</groupId>-->
+			<!--<artifactId>spire.pdf.free</artifactId>-->
+			<!--<version>2.2.2</version>-->
+		<!--</dependency>-->
 
 	</dependencies>
 
 
+	<!--<build>-->
+		<!--<plugins>-->
+			<!--<plugin>-->
+				<!--<groupId>org.springframework.boot</groupId>-->
+				<!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<fork>true</fork>-->
+                <!--</configuration>-->
+			<!--</plugin>-->
+			<!--<plugin>-->
+				<!--<groupId>org.codehaus.mojo</groupId>-->
+				<!--<artifactId>exec-maven-plugin</artifactId>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<id>run-benchmarks</id>-->
+						<!--<phase>integration-test</phase>-->
+						<!--<goals>-->
+							<!--<goal>exec</goal>-->
+						<!--</goals>-->
+						<!--<configuration>-->
+							<!--<classpathScope>test</classpathScope>-->
+							<!--<executable>java</executable>-->
+							<!--<arguments>-->
+								<!--<argument>-classpath</argument>-->
+								<!--<classpath />-->
+								<!--<argument>org.openjdk.jmh.Main</argument>-->
+								<!--<argument>.*</argument>-->
+							<!--</arguments>-->
+						<!--</configuration>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
+		<!--</plugins>-->
+	<!--</build>-->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>run-benchmarks</id>
-						<phase>integration-test</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<classpathScope>test</classpathScope>
-							<executable>java</executable>
-							<arguments>
-								<argument>-classpath</argument>
-								<classpath />
-								<argument>org.openjdk.jmh.Main</argument>
-								<argument>.*</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

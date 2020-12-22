@@ -17,7 +17,7 @@ public class PdfAddWaterPrint {
 
 //    public static void main(String[] args) throws IOException, DocumentException {
 //        String logoPath = "/Users/lichunxia/Documents/work/a3m.png";
-//        File waterPrint = new File("/Users/lichunxia/Documents/work/2.png");
+//        Archives waterPrint = new Archives("/Users/lichunxia/Documents/work/2.png");
 //        String pdfPath = "/Users/lichunxia/Documents/work/printaction.pdf";
 //        String outPath = "/Users/lichunxia/Documents/work/test0524.pdf";
 //        PdfReader reader = new PdfReader(pdfPath);

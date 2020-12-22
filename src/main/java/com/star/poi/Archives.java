@@ -1,7 +1,7 @@
 package com.star.poi;
 
 
-public class File {
+public class Archives {
 
     private Integer orderNo;
     private String wh;

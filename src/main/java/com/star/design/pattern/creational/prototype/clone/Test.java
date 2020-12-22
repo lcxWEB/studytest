@@ -1,6 +1,5 @@
 package com.star.design.pattern.creational.prototype.clone;
 
-import com.star.datastructure.stackqueue.Array;
 import com.star.design.pattern.creational.singleton.HungrySingleton;
 
 import java.lang.reflect.InvocationTargetException;

@@ -2,7 +2,6 @@ package com.star.java.generics;
 
 import com.star.java.Employee;
 import com.star.java.Manager;
-import javassist.compiler.ast.Pair;
 
 import java.io.Serializable;
 import java.lang.reflect.Array;

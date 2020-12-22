@@ -1,12 +1,12 @@
 package com.star.poi;
 
-import com.deepoove.poi.config.Name;
+// import com.deepoove.poi.config.Name;
 
 public class FileData {
 
     private String title;
     private String dh;
-    @Name("var")
+    // @Name("var")
     private DetailData detailData;
 
     public String getTitle() {

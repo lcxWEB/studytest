@@ -27,7 +27,7 @@ public class ImageToPDFSingleThread {
 //            try {
 //                for (int i = arr[j - 1]; i < arr[j]; i++) {
 //                    String imagePath = imgPath + "/" + imgList[i];
-//                    File imgFile = new File(imagePath);
+//                    Archives imgFile = new Archives(imagePath);
 //                    BufferedImage bim = ImageIO.read(imgFile);
 //                    PDPage page = new PDPage();
 //                    doc.addPage(page);
@@ -49,11 +49,11 @@ public class ImageToPDFSingleThread {
 
     public static void main(String[] args) throws IOException {
 
-//        File imgPath = new File("/Users/lichunxia/Documents/images/pdfimg");
+//        Archives imgPath = new Archives("/Users/lichunxia/Documents/images/pdfimg");
         String imgPath = "/Users/lichunxia/Documents/work/yuan.jpeg";
-//        File imgPath = new File("/Users/lichunxia/Documents/work/YH-2017-2302-00003");
-//        File waterPrint = new File("/Users/lichunxia/Documents/work/waterprint.jpeg");
-//        File waterPrint = new File("/Users/lichunxia/Documents/work/1.jpeg");
+//        Archives imgPath = new Archives("/Users/lichunxia/Documents/work/YH-2017-2302-00003");
+//        Archives waterPrint = new Archives("/Users/lichunxia/Documents/work/waterprint.jpeg");
+//        Archives waterPrint = new Archives("/Users/lichunxia/Documents/work/1.jpeg");
         File waterPrint = new File("/Users/lichunxia/Documents/work/2.png");
 
 //        Arrays.sort(imgList);
@@ -71,7 +71,7 @@ public class ImageToPDFSingleThread {
 //            String pdfPath = imgPath + "/" + 1 + "test2.pdf";
             String pdfPath = "/Users/lichunxia/Documents/work/test2.pdf";
 //            String imagePath = imgPath + "/" + imgList[0];
-//            File imgFile = new File(imagePath);
+//            Archives imgFile = new Archives(imagePath);
             File imgFile = new File(imgPath);
             BufferedImage bim = ImageIO.read(imgFile);
 

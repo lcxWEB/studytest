@@ -30,7 +30,7 @@ public class ImageTOPdf {
 //            System.exit(1);
 //        }
 
-//        File imgPath = new File("/Users/lichunxia/Documents/images/pdfimg");
+//        Archives imgPath = new Archives("/Users/lichunxia/Documents/images/pdfimg");
         File imgPath = new File("/Users/lichunxia/Documents/work/third-house/pics");
 
         String[] imgList = imgPath.list();

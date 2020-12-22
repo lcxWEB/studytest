@@ -12,7 +12,7 @@ public class FileLocking {
         FileOutputStream fos = new FileOutputStream("file.txt");
         FileLock fl = fos.getChannel().tryLock();
         if (fl != null) {
-            System.out.println("Lock File");
+            System.out.println("Lock Archives");
             System.out.println(fl.isShared());
             TimeUnit.MILLISECONDS.sleep(100);
             fl.release();
